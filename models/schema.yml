@@ -1,0 +1,104 @@
+# models/schema.yml
+version: 2
+
+models:
+  - name: marriage_data_analysis
+    description: "Raw marriage data from India with basic transformations"
+    columns:
+      - name: ID
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: Marriage_Type
+        description: "Type of marriage (arranged, love, etc.)"
+      - name: Age_at_Marriage
+        description: "Age of the person at the time of marriage"
+      - name: Gender
+        description: "Gender of the person"
+      - name: Education_Level
+        description: "Level of education of the person"
+      - name: Caste_Match
+        description: "Whether the marriage is between same castes (Yes/No)"
+      - name: Religion
+        description: "Religious affiliation of the person"
+      - name: Parental_Approval
+        description: "Whether parents approved of the marriage (Yes/No)"
+      - name: Urban_Rural
+        description: "Whether the marriage took place in urban or rural area"
+      - name: Dowry_Exchanged
+        description: "Whether dowry was exchanged during marriage (Yes/No)"
+      - name: Marital_Satisfaction
+        description: "Level of satisfaction with the marriage"
+      - name: Divorce_Status
+        description: "Whether the marriage ended in divorce (Yes/No)"
+      - name: Children_Count
+        description: "Number of children from the marriage"
+      - name: Income_Level
+        description: "Income level of the person"
+      - name: Years_Since_Marriage
+        description: "Number of years since the marriage took place"
+      - name: Spouse_Working
+        description: "Whether the spouse is working (Yes/No)"
+      - name: Inter_Caste
+        description: "Whether the marriage is between different castes (Yes/No)"
+      - name: Inter_Religion
+        description: "Whether the marriage is between different religions (Yes/No)"
+
+  - name: marriage_stats
+    description: "Aggregated statistics of marriage data by religion, location, type, and duration"
+    columns:
+      - name: Religion
+        description: "Religious affiliation of the couple"
+      - name: Urban_Rural
+        description: "Whether the marriage is in urban or rural area"
+      - name: Marriage_Type
+        description: "Type of marriage (arranged, love, etc.)"
+      - name: Years_Since_Marriage
+        description: "Number of years since marriage"
+      - name: marriages_count
+        description: "Count of marriages in this group"
+      - name: avg_age_at_marriage
+        description: "Average age at marriage"
+      - name: dowry_count
+        description: "Number of marriages where dowry was exchanged"
+      - name: divorce_count
+        description: "Number of divorces in this group"
+      - name: avg_children
+        description: "Average number of children"
+      - name: high_satisfaction_count
+        description: "Number of marriages with high satisfaction"
+      - name: caste_match_count
+        description: "Number of marriages with same caste"
+      - name: inter_caste_count
+        description: "Number of inter-caste marriages"
+      - name: inter_religion_count
+        description: "Number of inter-religion marriages"
+        
+  - name: gender_marriage_stats
+    description: "Gender-based analysis of marriage patterns by education and income"
+    columns:
+      - name: Gender
+        description: "Gender of the person"
+      - name: Education_Level
+        description: "Level of education of the person"
+      - name: Income_Level
+        description: "Income level of the person"
+      - name: avg_age_at_marriage
+        description: "Average age at marriage"
+      - name: count
+        description: "Count of people in this group"
+      - name: avg_marriage_duration
+        description: "Average duration of marriages in years"
+      - name: working_spouse_count
+        description: "Number of people with working spouses"
+      - name: high_satisfaction_count
+        description: "Number of people reporting high marital satisfaction"
+      - name: divorce_count
+        description: "Number of divorces in this group"
+      - name: avg_children_count
+        description: "Average number of children"
+      - name: inter_caste_count
+        description: "Number of inter-caste marriages"
+      - name: dowry_count
+        description: "Number of marriages with dowry exchange"

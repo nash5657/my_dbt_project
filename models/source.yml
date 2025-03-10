@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: india_data
+    schema: india_data
+    tables:
+      - name: marriage_data
+        description: "Raw marriage data from India"
